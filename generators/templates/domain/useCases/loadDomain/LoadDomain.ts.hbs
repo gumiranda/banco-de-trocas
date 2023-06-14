@@ -1,5 +1,5 @@
-import { Query } from "@/shared/types";
-import { HttpResponse } from "@/shared/libs/infra";
+import { Query } from "shared/types";
+import { HttpResponse } from "shared/libs/infra";
 import { Load{{pascalCase name}}Repository } from "../../repositories";
 
 export type Load{{pascalCase name}} = (query: Query) => Promise<HttpResponse | null>;

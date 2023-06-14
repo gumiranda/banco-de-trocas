@@ -1,5 +1,5 @@
-import { Query } from "@/shared/types";
-import { HttpResponse } from "@/shared/libs/infra";
+import { Query } from "shared/types";
+import { HttpResponse } from "shared/libs/infra";
 
 export interface Delete{{pascalCase name}}Repository {
   delete{{pascalCase name}}(query: Query): Promise<HttpResponse | null>;

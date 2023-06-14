@@ -1,5 +1,5 @@
-import { Add{{pascalCase name}}Repository } from "@/slices/{{camelCase name}}/repositories";
-import { HttpResponse } from "@/shared/libs/infra";
+import { Add{{pascalCase name}}Repository } from "slices/{{camelCase name}}/repositories";
+import { HttpResponse } from "shared/libs/infra";
 import { {{pascalCase name}}Data, {{pascalCase name}}Entity } from "../../{{pascalCase name}}Entity";
 
 export type Add{{pascalCase name}} = (data: {{pascalCase name}}Data) => Promise<HttpResponse | null>;
