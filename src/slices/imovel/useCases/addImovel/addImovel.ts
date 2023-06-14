@@ -1,5 +1,5 @@
-import { AddImovelRepository } from "@/slices/imovel/repositories";
-import { HttpResponse } from "@/shared/libs/infra";
+import { AddImovelRepository } from "slices/imovel/repositories";
+import { HttpResponse } from "shared/libs/infra";
 import { ImovelData, ImovelEntity } from "../../ImovelEntity";
 
 export type AddImovel = (data: ImovelData) => Promise<HttpResponse | null>;

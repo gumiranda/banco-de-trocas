@@ -1,4 +1,4 @@
-import { HttpResponse, Repository } from "@/shared/libs/infra";
+import { HttpResponse, Repository } from "shared/libs/infra";
 import {
   AddImovelRepository,
   DeleteImovelRepository,
@@ -6,7 +6,7 @@ import {
   LoadImovelRepository,
   UpdateImovelRepository,
 } from "./contracts";
-import { Query } from "@/shared/types";
+import { Query } from "shared/types";
 import { ImovelData, ImovelPaginated } from "../ImovelEntity";
 export class ImovelRepository
   implements

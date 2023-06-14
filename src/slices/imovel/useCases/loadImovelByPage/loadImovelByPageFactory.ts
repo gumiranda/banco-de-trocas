@@ -1,4 +1,4 @@
-import { SupabaseRepository } from "@/shared/libs/infra";
+import { SupabaseRepository } from "shared/libs/infra";
 import { LoadImovelByPage, loadImovelByPage } from "./loadImovelByPage";
 import { ImovelRepository } from "../../repositories";
 

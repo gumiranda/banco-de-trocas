@@ -1,5 +1,5 @@
-import { Query } from "@/shared/types";
-import { HttpResponse } from "@/shared/libs/infra";
+import { Query } from "shared/types";
+import { HttpResponse } from "shared/libs/infra";
 import { ImovelData } from "../../ImovelEntity";
 
 export interface UpdateImovelRepository {

@@ -1,4 +1,4 @@
-import { Controller, HttpRequest, HttpResponse, ok } from "@/shared/libs/infra";
+import { Controller, HttpRequest, HttpResponse, ok } from "shared/libs/infra";
 import { LoadImovelByPage } from "../../useCases";
 
 export class LoadImovelByPageController extends Controller {

@@ -1,4 +1,4 @@
-import { Controller } from "@/shared/libs/infra";
+import { Controller } from "shared/libs/infra";
 import { LoadImovelByPageController } from "./loadImovelByPageController";
 import { makeLoadImovelByPageFactory } from "../../useCases";
 

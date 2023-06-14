@@ -1,4 +1,4 @@
-import { Query } from "@/shared/types";
+import { Query } from "shared/types";
 import { ImovelPaginated } from "../../ImovelEntity";
 
 export interface LoadImovelByPageRepository {

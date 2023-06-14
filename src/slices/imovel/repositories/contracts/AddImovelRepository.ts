@@ -1,4 +1,4 @@
-import { HttpResponse } from "@/shared/libs/infra";
+import { HttpResponse } from "shared/libs/infra";
 import { ImovelData } from "../../ImovelEntity";
 
 export interface AddImovelRepository {

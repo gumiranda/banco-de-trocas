@@ -1,6 +1,6 @@
-import { Controller } from "@/shared/libs/infra";
+import { Controller } from "shared/libs/infra";
 import { UpdateImovelController } from "./updateImovelController";
-import { makeUpdateImovelFactory } from "@/slices/imovel/useCases";
+import { makeUpdateImovelFactory } from "slices/imovel/useCases";
 
 export const makeUpdateImovelController = (): Controller => {
   return new UpdateImovelController(makeUpdateImovelFactory());

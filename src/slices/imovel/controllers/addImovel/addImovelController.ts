@@ -1,4 +1,4 @@
-import { Controller, HttpRequest, HttpResponse, ok } from "@/shared/libs/infra";
+import { Controller, HttpRequest, HttpResponse, ok } from "shared/libs/infra";
 import { AddImovel } from "../../useCases";
 
 export class AddImovelController extends Controller {

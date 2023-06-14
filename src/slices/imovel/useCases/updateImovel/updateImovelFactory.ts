@@ -1,4 +1,4 @@
-import { SupabaseRepository } from "@/shared/libs/infra";
+import { SupabaseRepository } from "shared/libs/infra";
 import { UpdateImovel, updateImovel } from "./updateImovel";
 import { ImovelRepository } from "../../repositories";
 

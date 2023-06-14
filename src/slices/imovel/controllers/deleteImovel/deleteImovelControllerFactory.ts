@@ -1,4 +1,4 @@
-import { Controller } from "@/shared/libs/infra";
+import { Controller } from "shared/libs/infra";
 import { makeDeleteImovelFactory } from "../../useCases";
 import { DeleteImovelController } from "./deleteImovelController";
 
