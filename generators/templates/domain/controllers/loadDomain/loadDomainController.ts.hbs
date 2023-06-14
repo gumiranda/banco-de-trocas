@@ -1,0 +1,12 @@
+import { Controller, HttpRequest, HttpResponse, ok } from "@/shared/libs/infra";
+import { Load{{pascalCase name}} } from "../../useCases";
+
+export class Load{{pascalCase name}}Controller extends Controller {
+  constructor(private readonly load{{pascalCase name}}: Load{{pascalCase name}}) {
+    super();
+  }
+  async execute(httpRequest: HttpRequest<any>): Promise<HttpResponse<any>> {
+    const {{camelCase name}}Loaded = await this.load{{pascalCase name}}(httpRequest?.query);
+    return ok({{camelCase name}}Loaded);
+  }
+}

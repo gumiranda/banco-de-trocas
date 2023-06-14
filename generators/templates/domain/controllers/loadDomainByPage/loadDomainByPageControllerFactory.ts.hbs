@@ -1,0 +1,18 @@
+import { Controller } from "@/shared/libs/infra";
+import { Load{{pascalCase name}}ByPageController } from "./load{{pascalCase name}}ByPageController";
+import { makeLoad{{pascalCase name}}ByPageFactory } from "../../useCases";
+
+export const makeLoad{{pascalCase name}}ByPageController = (): Controller => {
+  return new Load{{pascalCase name}}ByPageController(makeLoad{{pascalCase name}}ByPageFactory());
+};
+/*
+EXEMPLO DE USO
+    const { data, error } = await makeLoad{{pascalCase name}}ByPageController().handle({
+      query: {
+        typeSort: "asc",
+        sortBy: "name",
+        page: 1,
+        projection: "*",
+      },
+    });
+*/

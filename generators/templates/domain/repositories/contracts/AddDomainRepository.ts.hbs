@@ -1,0 +1,6 @@
+import { HttpResponse } from "@/shared/libs/infra";
+import { {{pascalCase name}}Data } from "../../{{pascalCase name}}Entity";
+
+export interface Add{{pascalCase name}}Repository {
+  add{{pascalCase name}}({{camelCase name}}: {{pascalCase name}}Data): Promise<HttpResponse | null>;
+}

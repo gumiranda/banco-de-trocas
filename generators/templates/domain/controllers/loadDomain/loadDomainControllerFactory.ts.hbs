@@ -1,0 +1,16 @@
+import { Controller } from "@/shared/libs/infra";
+import { makeLoad{{pascalCase name}}Factory } from "../../useCases";
+import { Load{{pascalCase name}}Controller } from "./load{{pascalCase name}}Controller";
+
+export const makeLoad{{pascalCase name}}Controller = (): Controller => {
+  return new Load{{pascalCase name}}Controller(makeLoad{{pascalCase name}}Factory());
+};
+/*
+EXEMPLO DE USO
+    const { data, error } = await makeLoad{{pascalCase name}}Controller().handle({
+      query: {
+        fields: { id: 1 },
+        options: { select: "tax" },
+      },
+    });
+*/

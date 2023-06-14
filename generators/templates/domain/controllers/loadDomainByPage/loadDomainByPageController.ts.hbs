@@ -1,0 +1,30 @@
+import { Controller, HttpRequest, HttpResponse, ok } from "@/shared/libs/infra";
+import { Load{{pascalCase name}}ByPage } from "../../useCases";
+
+export class Load{{pascalCase name}}ByPageController extends Controller {
+  constructor(private readonly load{{pascalCase name}}ByPage: Load{{pascalCase name}}ByPage) {
+    super();
+  }
+  async execute(httpRequest: HttpRequest<any>): Promise<HttpResponse<any>> {
+    const {
+      projection,
+      page,
+      sortBy,
+      typeSort = "asc",
+      ...rest
+    } = httpRequest?.query || {};
+    const fields = rest;
+    const options = { sort: sortBy, page, projection };
+    const {{camelCase name}}Loaded = await this.load{{pascalCase name}}ByPage({
+      fields,
+      options,
+    });
+    return ok({
+      data: {
+        {{camelCase name}}s: {{camelCase name}}Loaded?.{{camelCase name}}s?.data,
+        total: {{camelCase name}}Loaded?.total,
+      },
+      error: {{camelCase name}}Loaded?.{{camelCase name}}s?.error,
+    });
+  }
+}

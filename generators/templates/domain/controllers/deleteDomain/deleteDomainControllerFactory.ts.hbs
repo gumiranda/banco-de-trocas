@@ -1,0 +1,16 @@
+import { Controller } from "@/shared/libs/infra";
+import { makeDelete{{pascalCase name}}Factory } from "../../useCases";
+import { Delete{{pascalCase name}}Controller } from "./delete{{pascalCase name}}Controller";
+
+export const makeDelete{{pascalCase name}}Controller = (): Controller => {
+  return new Delete{{pascalCase name}}Controller(makeDelete{{pascalCase name}}Factory());
+};
+/*
+EXEMPLO DE USO
+    const { data, error } = await makeLoad{{pascalCase name}}Controller().handle({
+      query: {
+        fields: { id: 4 },
+        options: {  },
+      },
+    });
+*/

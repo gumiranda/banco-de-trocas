@@ -1,0 +1,10 @@
+import { Add{{pascalCase name}}Repository } from "@/slices/{{camelCase name}}/repositories";
+import { HttpResponse } from "@/shared/libs/infra";
+import { {{pascalCase name}}Data, {{pascalCase name}}Entity } from "../../{{pascalCase name}}Entity";
+
+export type Add{{pascalCase name}} = (data: {{pascalCase name}}Data) => Promise<HttpResponse | null>;
+export type Add{{pascalCase name}}Signature = (add{{pascalCase name}}: Add{{pascalCase name}}Repository) => Add{{pascalCase name}};
+export const add{{pascalCase name}}: Add{{pascalCase name}}Signature =
+  (add{{pascalCase name}}Repository: Add{{pascalCase name}}Repository) => (data: {{pascalCase name}}Data) => {
+    return add{{pascalCase name}}Repository.add{{pascalCase name}}(new {{pascalCase name}}Entity(data));
+  };

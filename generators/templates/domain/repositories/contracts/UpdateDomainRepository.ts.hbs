@@ -1,0 +1,7 @@
+import { Query } from "@/shared/types";
+import { HttpResponse } from "@/shared/libs/infra";
+import { {{pascalCase name}}Data } from "../../{{pascalCase name}}Entity";
+
+export interface Update{{pascalCase name}}Repository {
+  update{{pascalCase name}}(query: Query, data: {{pascalCase name}}Data): Promise<HttpResponse | null>;
+}

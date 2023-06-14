@@ -1,0 +1,12 @@
+import { Controller, HttpRequest, HttpResponse, ok } from "@/shared/libs/infra";
+import { Add{{pascalCase name}} } from "../../useCases";
+
+export class Add{{pascalCase name}}Controller extends Controller {
+  constructor(private readonly add{{pascalCase name}}: Add{{pascalCase name}}) {
+    super();
+  }
+  async execute(httpRequest: HttpRequest<any>): Promise<HttpResponse<any>> {
+    const {{camelCase name}}Created = await this.add{{pascalCase name}}(httpRequest?.body);
+    return ok({{camelCase name}}Created);
+  }
+}

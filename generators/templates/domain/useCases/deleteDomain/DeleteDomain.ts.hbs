@@ -1,0 +1,12 @@
+import { HttpResponse } from "@/shared/libs/infra";
+import { Query } from "@/shared/types";
+import { Delete{{pascalCase name}}Repository } from "../../repositories";
+
+export type Delete{{pascalCase name}} = (query: Query) => Promise<HttpResponse | null>;
+export type Delete{{pascalCase name}}Signature = (
+  delete{{pascalCase name}}: Delete{{pascalCase name}}Repository
+) => Delete{{pascalCase name}};
+export const delete{{pascalCase name}}: Delete{{pascalCase name}}Signature =
+  (delete{{pascalCase name}}Repository: Delete{{pascalCase name}}Repository) => (query: Query) => {
+    return delete{{pascalCase name}}Repository.delete{{pascalCase name}}(query);
+  };

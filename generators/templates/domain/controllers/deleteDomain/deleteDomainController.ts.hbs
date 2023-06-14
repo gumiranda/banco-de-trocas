@@ -1,0 +1,12 @@
+import { Controller, HttpRequest, HttpResponse, ok } from "@/shared/libs/infra";
+import { Delete{{pascalCase name}} } from "../../useCases";
+
+export class Delete{{pascalCase name}}Controller extends Controller {
+  constructor(private readonly delete{{pascalCase name}}: Delete{{pascalCase name}}) {
+    super();
+  }
+  async execute(httpRequest: HttpRequest<any>): Promise<HttpResponse<any>> {
+    const {{camelCase name}}Deleteed = await this.delete{{pascalCase name}}(httpRequest?.query);
+    return ok({{camelCase name}}Deleteed);
+  }
+}

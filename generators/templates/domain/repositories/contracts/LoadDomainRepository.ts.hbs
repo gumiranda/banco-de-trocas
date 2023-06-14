@@ -1,0 +1,6 @@
+import { Query } from "@/shared/types";
+import { HttpResponse } from "@/shared/libs/infra";
+
+export interface Load{{pascalCase name}}Repository {
+  load{{pascalCase name}}(query: Query): Promise<HttpResponse | null>;
+}

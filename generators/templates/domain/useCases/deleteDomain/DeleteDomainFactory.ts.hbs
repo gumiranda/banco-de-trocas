@@ -1,0 +1,8 @@
+import { SupabaseRepository } from "@/shared/libs/infra";
+import { Delete{{pascalCase name}}, delete{{pascalCase name}} } from "./delete{{pascalCase name}}";
+import { {{pascalCase name}}Repository } from "../../repositories/{{pascalCase name}}Repository";
+
+export const makeDelete{{pascalCase name}}Factory = (): Delete{{pascalCase name}} => {
+  const repository = new {{pascalCase name}}Repository(new SupabaseRepository("{{camelCase name}}"));
+  return delete{{pascalCase name}}(repository);
+};

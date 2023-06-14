@@ -1,0 +1,15 @@
+import { Controller, HttpRequest, HttpResponse, ok } from "@/shared/libs/infra";
+import { Update{{pascalCase name}} } from "@/slices/{{camelCase name}}/useCases";
+
+export class Update{{pascalCase name}}Controller extends Controller {
+  constructor(private readonly update{{pascalCase name}}: Update{{pascalCase name}}) {
+    super();
+  }
+  async execute(httpRequest: HttpRequest<any>): Promise<HttpResponse<any>> {
+    const {{camelCase name}}Updated = await this.update{{pascalCase name}}(
+      httpRequest?.query,
+      httpRequest?.body
+    );
+    return ok({{camelCase name}}Updated);
+  }
+}

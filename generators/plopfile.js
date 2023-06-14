@@ -54,6 +54,17 @@ module.exports = function (plop) {
     ],
     actions: [...entities, ...features, ...pages, ...screens],
   });
+  plop.setGenerator("slice", {
+    description: "Create a slice",
+    prompts: [
+      {
+        type: "input",
+        name: "name",
+        message: "what the name of slice?",
+      },
+    ],
+    actions: [...controllers, ...useCases, ...repositories],
+  });
 };
 const entities = [
   {
@@ -221,5 +232,227 @@ const screens = [
     type: "add",
     path: "../src/screens/{{camelCase name}}/list/{{camelCase name}}List.hook.ts",
     templateFile: "templates/crud/screens/list/domainList.hook.ts.hbs",
+  },
+];
+
+const controllers = [
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/index.ts",
+    templateFile: "templates/domain/controllers/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/add{{pascalCase name}}/add{{pascalCase name}}Controller.ts",
+    templateFile: "templates/domain/controllers/addDomain/addDomainController.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/add{{pascalCase name}}/add{{pascalCase name}}ControllerFactory.ts",
+    templateFile:
+      "templates/domain/controllers/addDomain/addDomainControllerFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/add{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/controllers/addDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/delete{{pascalCase name}}/delete{{pascalCase name}}Controller.ts",
+    templateFile:
+      "templates/domain/controllers/deleteDomain/deleteDomainController.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/delete{{pascalCase name}}/delete{{pascalCase name}}ControllerFactory.ts",
+    templateFile:
+      "templates/domain/controllers/deleteDomain/deleteDomainControllerFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/delete{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/controllers/deleteDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/load{{pascalCase name}}/load{{pascalCase name}}Controller.ts",
+    templateFile: "templates/domain/controllers/loadDomain/loadDomainController.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/load{{pascalCase name}}/load{{pascalCase name}}ControllerFactory.ts",
+    templateFile:
+      "templates/domain/controllers/loadDomain/loadDomainControllerFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/load{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/controllers/loadDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/update{{pascalCase name}}/update{{pascalCase name}}Controller.ts",
+    templateFile:
+      "templates/domain/controllers/updateDomain/updateDomainController.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/update{{pascalCase name}}/update{{pascalCase name}}ControllerFactory.ts",
+    templateFile:
+      "templates/domain/controllers/updateDomain/updateDomainControllerFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/update{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/controllers/updateDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/load{{pascalCase name}}ByPage/load{{pascalCase name}}ByPageController.ts",
+    templateFile:
+      "templates/domain/controllers/loadDomainByPage/loadDomainByPageController.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/load{{pascalCase name}}ByPage/load{{pascalCase name}}ByPageControllerFactory.ts",
+    templateFile:
+      "templates/domain/controllers/loadDomainByPage/loadDomainByPageControllerFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/controllers/load{{pascalCase name}}ByPage/index.ts",
+    templateFile: "templates/domain/controllers/loadDomainByPage/index.ts.hbs",
+  },
+];
+const useCases = [
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/index.ts",
+    templateFile: "templates/domain/useCases/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/add{{pascalCase name}}/add{{pascalCase name}}.ts",
+    templateFile: "templates/domain/useCases/addDomain/addDomain.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/add{{pascalCase name}}/add{{pascalCase name}}Factory.ts",
+    templateFile: "templates/domain/useCases/addDomain/addDomainFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/add{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/useCases/addDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/delete{{pascalCase name}}/delete{{pascalCase name}}.ts",
+    templateFile: "templates/domain/useCases/deleteDomain/deleteDomain.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/delete{{pascalCase name}}/delete{{pascalCase name}}Factory.ts",
+    templateFile: "templates/domain/useCases/deleteDomain/deleteDomainFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/delete{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/useCases/deleteDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/load{{pascalCase name}}/load{{pascalCase name}}.ts",
+    templateFile: "templates/domain/useCases/loadDomain/loadDomain.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/load{{pascalCase name}}/load{{pascalCase name}}Factory.ts",
+    templateFile: "templates/domain/useCases/loadDomain/loadDomainFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/load{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/useCases/loadDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/update{{pascalCase name}}/update{{pascalCase name}}.ts",
+    templateFile: "templates/domain/useCases/updateDomain/updateDomain.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/update{{pascalCase name}}/update{{pascalCase name}}Factory.ts",
+    templateFile: "templates/domain/useCases/updateDomain/updateDomainFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/update{{pascalCase name}}/index.ts",
+    templateFile: "templates/domain/useCases/updateDomain/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/load{{pascalCase name}}ByPage/load{{pascalCase name}}ByPage.ts",
+    templateFile: "templates/domain/useCases/loadDomainByPage/loadDomainByPage.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/load{{pascalCase name}}ByPage/load{{pascalCase name}}ByPageFactory.ts",
+    templateFile:
+      "templates/domain/useCases/loadDomainByPage/loadDomainByPageFactory.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/useCases/load{{pascalCase name}}ByPage/index.ts",
+    templateFile: "templates/domain/useCases/loadDomainByPage/index.ts.hbs",
+  },
+];
+const repositories = [
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/index.ts",
+    templateFile: "templates/domain/repositories/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/contracts/index.ts",
+    templateFile: "templates/domain/repositories/contracts/index.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/{{pascalCase name}}Entity.ts",
+    templateFile: "templates/domain/Domain.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/{{pascalCase name}}Repository.ts",
+    templateFile: "templates/domain/repositories/DomainRepository.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/contracts/Add{{pascalCase name}}Repository.ts",
+    templateFile: "templates/domain/repositories/contracts/AddDomainRepository.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/contracts/Delete{{pascalCase name}}Repository.ts",
+    templateFile: "templates/domain/repositories/contracts/DeleteDomainRepository.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/contracts/Load{{pascalCase name}}Repository.ts",
+    templateFile: "templates/domain/repositories/contracts/LoadDomainRepository.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/contracts/Load{{pascalCase name}}ByPageRepository.ts",
+    templateFile:
+      "templates/domain/repositories/contracts/LoadDomainByPageRepository.ts.hbs",
+  },
+  {
+    type: "add",
+    path: "../src/slices/{{camelCase name}}/repositories/contracts/Update{{pascalCase name}}Repository.ts",
+    templateFile: "templates/domain/repositories/contracts/UpdateDomainRepository.ts.hbs",
   },
 ];

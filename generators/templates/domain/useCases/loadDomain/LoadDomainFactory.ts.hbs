@@ -1,0 +1,8 @@
+import { SupabaseRepository } from "@/shared/libs/infra";
+import { Load{{pascalCase name}}, load{{pascalCase name}} } from "./load{{pascalCase name}}";
+import { {{pascalCase name}}Repository } from "../../repositories";
+
+export const makeLoad{{pascalCase name}}Factory = (): Load{{pascalCase name}} => {
+  const repository = new {{pascalCase name}}Repository(new SupabaseRepository("{{camelCase name}}"));
+  return load{{pascalCase name}}(repository);
+};

@@ -1,0 +1,19 @@
+import { Controller } from "@/shared/libs/infra";
+import { Update{{pascalCase name}}Controller } from "./update{{pascalCase name}}Controller";
+import { makeUpdate{{pascalCase name}}Factory } from "@/slices/{{camelCase name}}/useCases";
+
+export const makeUpdate{{pascalCase name}}Controller = (): Controller => {
+  return new Update{{pascalCase name}}Controller(makeUpdate{{pascalCase name}}Factory());
+};
+/*
+EXEMPLO DE USO
+    const { data, error } = await makeUpdate{{pascalCase name}}Controller().handle({
+      query: {
+        fields: { id: 1 },
+        options: { select: "tax" },
+      },
+      body: {
+        name: "test",
+      },
+    });
+*/

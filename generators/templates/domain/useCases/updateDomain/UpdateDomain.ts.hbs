@@ -1,0 +1,16 @@
+import { Query } from "@/shared/types";
+import { HttpResponse } from "@/shared/libs/infra";
+import { {{pascalCase name}}Data } from "../../{{pascalCase name}}Entity";
+import { Update{{pascalCase name}}Repository } from "../../repositories";
+export type Update{{pascalCase name}} = (
+  query: Query,
+  data: {{pascalCase name}}Data
+) => Promise<HttpResponse | null>;
+export type Update{{pascalCase name}}Signature = (
+  update{{pascalCase name}}: Update{{pascalCase name}}Repository
+) => Update{{pascalCase name}};
+export const update{{pascalCase name}}: Update{{pascalCase name}}Signature =
+  (update{{pascalCase name}}Repository: Update{{pascalCase name}}Repository) =>
+  async (query: Query, data: {{pascalCase name}}Data) => {
+    return update{{pascalCase name}}Repository.update{{pascalCase name}}(query, data);
+  };

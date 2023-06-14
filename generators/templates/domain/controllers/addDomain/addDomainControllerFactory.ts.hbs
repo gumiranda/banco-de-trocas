@@ -1,0 +1,15 @@
+import { Controller } from "@/shared/libs/infra";
+import { makeAdd{{pascalCase name}}Factory } from "../../useCases";
+import { Add{{pascalCase name}}Controller } from "./add{{pascalCase name}}Controller";
+
+export const makeAdd{{pascalCase name}}Controller = (): Controller => {
+  return new Add{{pascalCase name}}Controller(makeAdd{{pascalCase name}}Factory());
+};
+/*
+EXEMPLO DE USO
+    const { data, error } = await makeAdd{{pascalCase name}}Controller().handle({
+      body: {
+        name: "test",
+      },
+    });
+*/
