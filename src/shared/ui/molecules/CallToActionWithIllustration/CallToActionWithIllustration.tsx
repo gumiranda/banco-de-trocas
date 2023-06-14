@@ -31,7 +31,7 @@ export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
           Residências, Apartamentos, Sítios, Terrenos, Imóveis Rurais ou Comerciais.
         </Text>
         <Stack spacing={6} direction={"row"}>
-          <NextLink href="https://web.whatsapp.com/send?phone=5511991843119">
+          <NextLink href="https://api.whatsapp.com/send?phone=5511991843119&text=Ola.">
             <Button
               rounded={"full"}
               px={6}
@@ -42,7 +42,7 @@ export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
               Quero anunciar
             </Button>
           </NextLink>
-          <NextLink href="https://web.whatsapp.com/send?phone=5511991843119">
+          <NextLink href="https://api.whatsapp.com/send?phone=5511991843119&text=Ola.">
             <Button bg={"gray.400"} _hover={{ bg: "gray.500" }} rounded={"full"} px={6}>
               Saiba mais
             </Button>

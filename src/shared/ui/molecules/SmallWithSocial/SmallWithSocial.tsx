@@ -35,7 +35,7 @@ export const SmallWithSocial = () => {
           </SocialButton>
           <SocialButton
             label={"Whatsapp"}
-            href={"https://web.whatsapp.com/send?phone=5511991843119"}
+            href={"https://api.whatsapp.com/send?phone=5511991843119&text=Ola."}
           >
             <FaWhatsapp />
           </SocialButton>
