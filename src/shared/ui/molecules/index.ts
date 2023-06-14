@@ -1,4 +1,5 @@
 // IMPORT MODULE FILES
+export * from "./CallToActionWithIllustration";
 export * from "./CreateItemActions";
 export * from "./GridForm";
 export * from "./GenericDetailsItem";
