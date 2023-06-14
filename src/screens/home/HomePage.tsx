@@ -1,5 +1,11 @@
 import type { NextPage } from "next";
-import { Head, Flex, CallToActionWithIllustration, SplitWithImage } from "shared/ui";
+import {
+  Head,
+  Flex,
+  CallToActionWithIllustration,
+  SplitWithImage,
+  SmallWithSocial,
+} from "shared/ui";
 export const HomePage: NextPage = () => {
   return (
     <>
@@ -10,6 +16,7 @@ export const HomePage: NextPage = () => {
       <Flex minW="100%" justifyContent="center" flexDirection={"column"}>
         <CallToActionWithIllustration />
         <SplitWithImage />
+        <SmallWithSocial />
       </Flex>
     </>
   );

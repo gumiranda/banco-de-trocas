@@ -1,6 +1,6 @@
 import { Flex, Container, Heading, Stack, Text, Button } from "@chakra-ui/react";
 import { Illustration } from "shared/ui/atoms/Illustration";
-
+import NextLink, { LinkProps } from "next/link";
 export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
   return (
     <Container maxW={"5xl"}>
@@ -31,18 +31,22 @@ export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
           Residências, Apartamentos, Sítios, Terrenos, Imóveis Rurais ou Comerciais.
         </Text>
         <Stack spacing={6} direction={"row"}>
-          <Button
-            rounded={"full"}
-            px={6}
-            colorScheme={"orange"}
-            bg={"orange.400"}
-            _hover={{ bg: "orange.500" }}
-          >
-            Quero anunciar
-          </Button>
-          <Button bg={"gray.400"} _hover={{ bg: "gray.500" }} rounded={"full"} px={6}>
-            Saiba mais
-          </Button>
+          <NextLink href="https://web.whatsapp.com/send?phone=5511991843119">
+            <Button
+              rounded={"full"}
+              px={6}
+              colorScheme={"orange"}
+              bg={"orange.400"}
+              _hover={{ bg: "orange.500" }}
+            >
+              Quero anunciar
+            </Button>
+          </NextLink>
+          <NextLink href="https://web.whatsapp.com/send?phone=5511991843119">
+            <Button bg={"gray.400"} _hover={{ bg: "gray.500" }} rounded={"full"} px={6}>
+              Saiba mais
+            </Button>
+          </NextLink>
         </Stack>
         <Flex w={"full"}>
           <Illustration height={{ sm: "24rem", lg: "28rem" }} mt={{ base: 12, sm: 16 }} />
