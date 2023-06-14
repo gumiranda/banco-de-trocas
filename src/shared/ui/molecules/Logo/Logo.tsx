@@ -3,7 +3,7 @@ import NextLink from "next/link";
 
 export const Logo = () => {
   return (
-    <NextLink href="/home">
+    <NextLink href="/">
       <Text
         textAlign={"left"}
         fontWeight="bold"

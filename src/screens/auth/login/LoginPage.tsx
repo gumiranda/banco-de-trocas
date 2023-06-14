@@ -8,7 +8,7 @@ export const Login: NextPage = () => {
   const { isAuthenticated } = useAuth();
   useEffect(() => {
     if (isAuthenticated) {
-      Router.push("/home");
+      Router.push("/");
     }
   }, [isAuthenticated]);
   return (

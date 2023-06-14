@@ -1,4 +1,5 @@
 // IMPORT MODULE FILES
+export * from "./SplitWithImage";
 export * from "./CallToActionWithIllustration";
 export * from "./CreateItemActions";
 export * from "./GridForm";

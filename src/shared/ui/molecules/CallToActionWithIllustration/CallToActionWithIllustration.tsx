@@ -21,9 +21,14 @@ export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
           </Text>
         </Heading>
         <Text fontSize={"xl"} color={"gray.300"} maxW={"3xl"}>
-          Agora você pode negociar seu imóvel com facilidade, rapidez e segurança. Banco de
-          Trocas Imóveis, desde 1992 realizando bons negócios imobiliários para ambas as
-          partes, voltando ou recebendo dinheiro de volta
+          Quer vender ou comprar um imóvel? Escolha o caminho mais seguro e eficiente com o
+          Banco de Trocas Imóveis, referência no mercado desde 1992. Afinal negociar seu
+          imóvel não precisa ser complicado. Nós simplificamos o processo, garantindo
+          segurança e satisfação onde ambas as partes saem ganhando.
+        </Text>
+        <Text fontSize={"xl"} color={"gray.300"} maxW={"3xl"}>
+          Cadastre seu imóvel São Paulo Capital, Litoral Paulista, Interior Paulista.
+          Residências, Apartamentos, Sítios, Terrenos, Imóveis Rurais ou Comerciais.
         </Text>
         <Stack spacing={6} direction={"row"}>
           <Button
