@@ -1,6 +1,6 @@
 export type ContatoData = {
   id?: string;
-  created_at: string | null;
+  created_at?: Date;
   email: string | null;
   interessadoem: string | null;
   nome: string | null;

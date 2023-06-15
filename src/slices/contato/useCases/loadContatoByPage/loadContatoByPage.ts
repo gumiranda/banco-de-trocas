@@ -7,7 +7,6 @@ export type LoadContatoByPageSignature = (
   loadContatoByPage: LoadContatoByPageRepository
 ) => LoadContatoByPage;
 export const loadContatoByPage: LoadContatoByPageSignature =
-  (loadContatoByPageRepository: LoadContatoByPageRepository) =>
-  async (query: Query) => {
+  (loadContatoByPageRepository: LoadContatoByPageRepository) => async (query: Query) => {
     return loadContatoByPageRepository.loadContatoByPage(query);
   };

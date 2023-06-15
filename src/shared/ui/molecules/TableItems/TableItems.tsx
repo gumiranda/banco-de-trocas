@@ -73,7 +73,7 @@ export const TableItems = ({
                 <Box>
                   <Link
                     color="green.400"
-                    href={`${routeDetails}/${item?._id}`}
+                    href={`${routeDetails}/${item?.id}`}
                     onMouseEnter={() => linkOnMouseEnter(item)}
                   >
                     <Text fontWeight={"bold"}>{item[field?.id]}</Text>
@@ -90,7 +90,7 @@ export const TableItems = ({
             <Button
               as="a"
               size="sm"
-              href={`${route}/edit/${item?._id}`}
+              href={`${route}/edit/${item?.id}`}
               fontSize="sm"
               colorScheme={"purple"}
             >

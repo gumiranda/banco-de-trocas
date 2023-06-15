@@ -1,0 +1,57 @@
+import { useUi } from "shared/libs";
+import { EditImovelFormProps } from "./EditImovelForm";
+import {
+  EditImovelFormData,
+  SubmitEditImovelHandler,
+  useEditImovelLib,
+} from "./editImovel.lib";
+import { useRouter } from "next/router";
+import { api } from "shared/api";
+import { useMutation } from "@tanstack/react-query";
+import { makeUpdateImovelController } from "slices/imovel/controllers";
+export const useEditImovel = (props: EditImovelFormProps) => {
+  const { showModal } = useUi();
+  const { imovel: currentImovel } = props;
+  const router = useRouter();
+  const editImovel = useMutation(async (imovel: EditImovelFormData) => {
+    try {
+      const { data, error } = await makeUpdateImovelController().handle({
+        query: {
+          fields: { id: currentImovel.id },
+          options: { select: "*" },
+        },
+        body: {
+          ...imovel,
+          updatedAt: new Date(),
+        },
+      });
+      if (!data || error) {
+        showModal({
+          content: "Ocorreu um erro inesperado no servidor, tente novamente mais tarde",
+          title: "Erro no servidor",
+          type: "error",
+        });
+        return;
+      }
+      showModal({
+        content:
+          "Imovel editada com sucesso, você será redirecionado para a lista de imovels",
+        title: "Sucesso",
+        type: "success",
+      });
+      router.push("/imovels/1");
+      return data;
+    } catch (error) {
+      showModal({
+        content: "Ocorreu um erro inesperado no servidor, tente novamente mais tarde",
+        title: "Erro no servidor",
+        type: "error",
+      });
+    }
+  }, {});
+  const { register, handleSubmit, formState } = useEditImovelLib(props);
+  const handleEditImovel: SubmitEditImovelHandler = async (values: EditImovelFormData) => {
+    await editImovel.mutateAsync(values);
+  };
+  return { formState, register, handleSubmit, handleEditImovel };
+};

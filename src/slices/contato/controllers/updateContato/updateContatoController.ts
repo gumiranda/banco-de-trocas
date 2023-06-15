@@ -6,10 +6,7 @@ export class UpdateContatoController extends Controller {
     super();
   }
   async execute(httpRequest: HttpRequest<any>): Promise<HttpResponse<any>> {
-    const contatoUpdated = await this.updateContato(
-      httpRequest?.query,
-      httpRequest?.body
-    );
+    const contatoUpdated = await this.updateContato(httpRequest?.query, httpRequest?.body);
     return ok(contatoUpdated);
   }
 }
