@@ -4,7 +4,6 @@ export type ImovelProps = {
   created_at: string;
   value?: boolean;
   active?: boolean;
-  created_at?: Date;
   aceitatroca?: boolean | null;
   areatotal?: number | null;
   areautil?: number | null;
