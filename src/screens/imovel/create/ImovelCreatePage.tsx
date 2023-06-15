@@ -9,7 +9,7 @@ export const ImovelCreatePage = () => {
         title={"Belezix Admin | Imovels"}
         description="Página de criação de imovels do painel de Admin Belezix"
       />
-      <Box flex="1" borderRadius={8} bg="purple.800" p="8">
+      <Box flex="1" borderRadius={8} bg="gray.800" p="8">
         <CreateImovelForm />
       </Box>
     </>

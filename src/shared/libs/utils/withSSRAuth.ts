@@ -4,7 +4,6 @@ import {
   GetServerSidePropsContext,
 } from "next";
 import { parseCookies, setCookie } from "nookies";
-import { getAxios } from "shared/api";
 export function withSSRAuth<P extends { [key: string]: any }>(fn: GetServerSideProps<P>) {
   return async (ctx: GetServerSidePropsContext): Promise<GetServerSidePropsResult<P>> => {
     const cookies = parseCookies(ctx);

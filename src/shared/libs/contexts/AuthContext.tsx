@@ -34,18 +34,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
       return null;
     }
   };
-  useEffect(() => {
-    const {
-      "belezixadmin.user": userComingFromCookie,
-      "belezixadmin.refreshToken": refreshToken = null,
-    } = parseCookies();
-    const parsedUser = parseJSON(userComingFromCookie);
-    if (parsedUser && refreshToken) {
-      setUser(parsedUser);
-    } else {
-      signOut();
-    }
-  }, []);
+  // useEffect(() => {
+  //   const {
+  //     "belezixadmin.user": userComingFromCookie,
+  //     "belezixadmin.refreshToken": refreshToken = null,
+  //   } = parseCookies();
+  //   const parsedUser = parseJSON(userComingFromCookie);
+  //   if (parsedUser && refreshToken) {
+  //     setUser(parsedUser);
+  //   } else {
+  //     signOut();
+  //   }
+  // }, []);
 
   const login = async ({ email, password }: LoginCredentials) => {
     try {

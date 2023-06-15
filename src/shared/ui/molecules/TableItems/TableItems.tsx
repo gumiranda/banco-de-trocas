@@ -92,7 +92,7 @@ export const TableItems = ({
               size="sm"
               href={`${route}/edit/${item?.id}`}
               fontSize="sm"
-              colorScheme={"purple"}
+              colorScheme={"gray"}
             >
               <Icon fontSize="16" as={RiPencilLine} />
             </Button>

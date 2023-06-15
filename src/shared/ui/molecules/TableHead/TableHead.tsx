@@ -58,7 +58,7 @@ export const TableHead = ({
           <Button
             size="sm"
             fontSize="sm"
-            colorScheme={"purple"}
+            colorScheme={"gray"}
             leftIcon={<Icon fontSize="20" as={RiFileListLine} />}
           >
             Lista

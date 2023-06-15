@@ -43,7 +43,7 @@ export const GridHead = ({
           <Button
             size="sm"
             fontSize="sm"
-            colorScheme={"purple"}
+            colorScheme={"gray"}
             leftIcon={<Icon fontSize="20" as={RiTable2} />}
           >
             Tabela

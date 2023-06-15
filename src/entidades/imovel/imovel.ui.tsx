@@ -13,10 +13,10 @@ export const useImovelUi = ({ deleteSelectedAction }: any) => {
         <>
           {fields.map((field: any, ix: number) => (
             <React.Fragment key={`${ix}-${field?.id}`}>
-              <Text fontSize="xl" color="purple.800">
+              <Text fontSize="xl" color="gray.800">
                 {field?.label}
               </Text>
-              <Text color="purple.700">{item[field?.id]}</Text>
+              <Text color="gray.700">{item[field?.id]}</Text>
             </React.Fragment>
           ))}
         </>
@@ -36,7 +36,7 @@ export const useImovelUi = ({ deleteSelectedAction }: any) => {
           </Button>
           <NextLink passHref href={`/imovels/edit/${item?.id}`}>
             <Button
-              colorScheme="purple"
+              colorScheme="gray"
               leftIcon={<Icon fontSize="20" as={RiEditLine} />}
               onClick={onClose}
             >

@@ -26,7 +26,7 @@ export const ImovelListTablePage = ({ page = 0, data }: ImovelListTablePageProps
         title={"Belezix Admin | Imovels"}
         description="Página de listagem de imovels do painel de Admin Belezix"
       />
-      <Box borderRadius={8} bg="purple.800" p="4" flexGrow="1">
+      <Box borderRadius={8} bg="gray.800" p="4" flexGrow="1">
         <GenericTable
           deleteSelectedAction={deleteSelectedAction}
           isLoading={false}
