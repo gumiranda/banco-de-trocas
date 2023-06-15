@@ -10,8 +10,8 @@ export const ImovelEditPage = ({ data, id }: ImovelEditProps) => {
   return (
     <>
       <Head
-        title={"Belezix Admin | Imovels"}
-        description="Página de edição de imovels do painel de Admin Belezix"
+        title={"Banco de Trocas | Imóveis"}
+        description="Página de edição de imóveis site Banco de Trocas Imóveis."
       />
       <Box flex="1" borderRadius={8} bg="gray.800" p="8">
         <EditImovelForm {...props} />

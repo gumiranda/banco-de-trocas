@@ -10,8 +10,8 @@ export const ImovelDetailsPage = ({ data }: ImovelDetailsProps) => {
   return (
     <>
       <Head
-        title={"Belezix Admin | Imovels"}
-        description="Página de detalhes de imovels do painel de Admin Belezix"
+        title={"Banco de Trocas | Imóveis"}
+        description="Página de detalhes de imóveis site Banco de Trocas Imóveis."
       />
       <Box flex="1" borderRadius={8} bg="gray.800" p="8">
         <ImovelDetails {...props} />

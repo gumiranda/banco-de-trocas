@@ -23,8 +23,8 @@ export const ImovelListTablePage = ({ page = 0, data }: ImovelListTablePageProps
   return (
     <>
       <Head
-        title={"Belezix Admin | Imovels"}
-        description="Página de listagem de imovels do painel de Admin Belezix"
+        title={"Banco de Trocas | Imóveis"}
+        description="Página de listagem de imóveis do site Banco de Trocas"
       />
       <Box borderRadius={8} bg="gray.800" p="4" flexGrow="1">
         <GenericTable

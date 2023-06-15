@@ -27,7 +27,7 @@ export const useCreateImovel = () => {
       }
       showModal({
         content:
-          "Imovel criada com sucesso, você será redirecionado para a lista de imovels",
+          "Imovel criada com sucesso, você será redirecionado para a lista de imóveis",
         title: "Sucesso",
         type: "success",
       });

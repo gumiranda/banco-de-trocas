@@ -14,8 +14,8 @@ export const SocialButton = ({
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
       rounded={"full"}
-      w={8}
-      h={8}
+      w={12}
+      h={12}
       cursor={"pointer"}
       as={"a"}
       href={href}

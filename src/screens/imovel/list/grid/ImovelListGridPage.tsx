@@ -38,8 +38,8 @@ export const ImovelGridPage = () => {
   return (
     <>
       <Head
-        title={"Belezix Admin | Imovels"}
-        description="Página de listagem de imovels do painel de Admin Belezix"
+        title={"Banco de Trocas | Imóveis"}
+        description="Página de listagem de imóveis do site Banco de Trocas"
       />
       <InfiniteList
         hasNextPage={hasNextPage as any}

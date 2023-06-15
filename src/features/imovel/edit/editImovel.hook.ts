@@ -35,7 +35,7 @@ export const useEditImovel = (props: EditImovelFormProps) => {
       }
       showModal({
         content:
-          "Imovel editada com sucesso, você será redirecionado para a lista de imovels",
+          "Imovel editada com sucesso, você será redirecionado para a lista de imóveis",
         title: "Sucesso",
         type: "success",
       });

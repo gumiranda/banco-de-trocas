@@ -6,8 +6,8 @@ export const ImovelCreatePage = () => {
   return (
     <>
       <Head
-        title={"Belezix Admin | Imovels"}
-        description="Página de criação de imovels do painel de Admin Belezix"
+        title={"Banco de Trocas | Imóveis"}
+        description="Página de criação de imóveis do site Banco de Trocas"
       />
       <Box flex="1" borderRadius={8} bg="gray.800" p="8">
         <CreateImovelForm />

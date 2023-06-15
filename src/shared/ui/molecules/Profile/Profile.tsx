@@ -11,13 +11,13 @@ export const Profile = ({ showProfileData }: ProfileProps) => {
     <Flex align="center" mr={["2", "2", "0", "0"]}>
       {showProfileData && (
         <Box mr="4" textAlign="right" datatestid="ProfileTestId">
-          <Text>Gustavo Miranda</Text>
+          <Text>Gilson Aguiar</Text>
           <Text color="gray.300" fontSize="small">
             {user?.email}
           </Text>
         </Box>
       )}
-      <Avatar name="Gustavo Miranda" size="md" src="https://github.com/gumiranda.png" />
+      <Avatar name="Gilson Aguiar" size="md" src="https://iili.io/H6MlvRI.png" />
     </Flex>
   );
 };

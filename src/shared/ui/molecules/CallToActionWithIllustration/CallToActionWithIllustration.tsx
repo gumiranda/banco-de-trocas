@@ -42,11 +42,6 @@ export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
               Quero anunciar
             </Button>
           </NextLink>
-          <NextLink href="https://api.whatsapp.com/send?phone=5511991843119&text=Ola.">
-            <Button bg={"gray.400"} _hover={{ bg: "gray.500" }} rounded={"full"} px={6}>
-              Saiba mais
-            </Button>
-          </NextLink>
         </Stack>
         <Flex w={"full"}>
           <Illustration height={{ sm: "24rem", lg: "28rem" }} mt={{ base: 12, sm: 16 }} />
