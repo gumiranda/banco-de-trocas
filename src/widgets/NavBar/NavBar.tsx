@@ -24,16 +24,17 @@ export const NavBar = () => {
         />
       )}
       <Logo />
-
-      <Flex align="center" ml="auto">
-        <SocialButton
-          label={"Whatsapp"}
-          href={"https://api.whatsapp.com/send?phone=5511991843119&text=Ola."}
-        >
-          <FaWhatsapp />
-        </SocialButton>
-        <Profile showProfileData={isDesktopVersion} />
-      </Flex>
+      {isDesktopVersion && (
+        <Flex align="center" ml="auto">
+          <SocialButton
+            label={"Whatsapp"}
+            href={"https://api.whatsapp.com/send?phone=5511991843119&text=Ola."}
+          >
+            <FaWhatsapp />
+          </SocialButton>
+          <Profile showProfileData={isDesktopVersion} />
+        </Flex>
+      )}
     </Header>
   );
 };

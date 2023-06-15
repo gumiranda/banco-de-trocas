@@ -40,7 +40,7 @@ export const ContactForm = () => {
     <Container bg="gray.900" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
-          bg="gray.600"
+          bg="gray.800"
           color="white"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
@@ -62,8 +62,8 @@ export const ContactForm = () => {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: "2px solid #333" }}
-                        leftIcon={<MdPhone color="#333" size="20px" />}
+                        _hover={{ border: "2px solid #bdc3c7" }}
+                        leftIcon={<MdPhone color="#bdc3c7" size="20px" />}
                       >
                         +55 (11) 991843119
                       </Button>
@@ -73,8 +73,8 @@ export const ContactForm = () => {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: "2px solid #333" }}
-                        leftIcon={<MdEmail color="#333" size="20px" />}
+                        _hover={{ border: "2px solid #bdc3c7" }}
+                        leftIcon={<MdEmail color="#bdc3c7" size="20px" />}
                       >
                         giaguiar@uol.com.br
                       </Button>
@@ -84,8 +84,8 @@ export const ContactForm = () => {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: "2px solid #333" }}
-                        leftIcon={<MdLocationOn color="#333" size="20px" />}
+                        _hover={{ border: "2px solid #bdc3c7" }}
+                        leftIcon={<MdLocationOn color="#bdc3c7" size="20px" />}
                       >
                         Ribeirão Preto, SP
                       </Button>

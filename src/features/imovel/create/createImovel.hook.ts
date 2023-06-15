@@ -12,7 +12,7 @@ import { makeAddImovelController } from "slices/imovel/controllers";
 export const useCreateImovel = () => {
   const { showModal } = useUi();
   const router = useRouter();
-  const [active, setActive] = useState(false);
+  const [aceitatroca, setAceitaTroca] = useState(false);
   const createImovel = useMutation(async (imovel: CreateImovelFormData) => {
     try {
       const { data, error } = await makeAddImovelController().handle({
@@ -30,7 +30,7 @@ export const useCreateImovel = () => {
       }
       showModal({
         content:
-          "Imovel criada com sucesso, você será redirecionado para a lista de imóveis",
+          "Imóvel anunciado com sucesso, em breve o corretor irá entrar em contato com você!",
         title: "Sucesso",
         type: "success",
       });
@@ -48,7 +48,14 @@ export const useCreateImovel = () => {
   const handleCreateImovel: SubmitCreateImovelHandler = async (
     values: CreateImovelFormData
   ) => {
-    await createImovel.mutateAsync({ ...values, active });
+    await createImovel.mutateAsync({ ...values, aceitatroca });
   };
-  return { formState, register, handleSubmit, handleCreateImovel, active, setActive };
+  return {
+    formState,
+    register,
+    handleSubmit,
+    handleCreateImovel,
+    aceitatroca,
+    setAceitaTroca,
+  };
 };
