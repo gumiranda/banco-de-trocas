@@ -16,7 +16,7 @@ type UiContextData = UseDisclosureReturn & {
 const UiContext = createContext({} as UiContextData);
 const CloseButton = ({ onClose }: any) => {
   return (
-    <Button colorScheme={"gray"} mr={3} onClick={onClose}>
+    <Button colorScheme={"purple"} mr={3} onClick={onClose}>
       Ok, entendi
     </Button>
   );

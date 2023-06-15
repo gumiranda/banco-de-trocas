@@ -1,7 +1,7 @@
 export type ImovelProps = {
-  id?: string;
-  name: string;
-  createdAt: string;
+  id?: string | null;
+  name?: string | null;
+  created_at: string;
   value?: boolean;
   active?: boolean;
   created_at?: Date;
@@ -38,14 +38,14 @@ class Imovel {
   public static build(props: ImovelProps) {
     return new Imovel(props);
   }
-  get id(): string | undefined {
+  get id(): string | undefined | null {
     return this.props.id;
   }
-  get name(): string {
+  get name(): string | null | undefined {
     return this.props.name;
   }
-  get createdAt(): string {
-    return this.props.createdAt;
+  get created_at(): string {
+    return this.props.created_at;
   }
   get active(): boolean | undefined {
     return this.props.active;
@@ -53,15 +53,20 @@ class Imovel {
   format(): ImovelProps {
     return {
       ...this.props,
-      id: this.props.id,
-      name: this.props.name,
-      active: this.props.active,
+      active: this.props.active || false,
       value: false,
-      createdAt: new Date(this.props.createdAt).toLocaleDateString("pt-BR", {
+      created_at: new Date(this.props.created_at).toLocaleDateString("pt-BR", {
         day: "2-digit",
         month: "2-digit",
         year: "numeric",
       }),
+      /*
+      .toLocaleDateString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })
+      */
     };
   }
 }

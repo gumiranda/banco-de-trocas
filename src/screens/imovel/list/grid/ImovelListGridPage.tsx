@@ -25,7 +25,7 @@ export const ImovelGridPage = () => {
     deleteSelectedAction,
     fields: [
       { id: "name", label: "Nome", displayKeyText: true },
-      { id: "createdAt", label: "Data de criação", displayKeyText: true },
+      { id: "created_at", label: "Data de criação", displayKeyText: true },
     ],
   };
   const items =

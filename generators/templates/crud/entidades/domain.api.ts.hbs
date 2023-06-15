@@ -13,7 +13,7 @@ export const get{{pascalCase name}}s = async (
   params: any = {}
 ): Promise<Get{{pascalCase name}}sResponse> => {
   const { data } = await setupAPIClient(ctx).get("/{{camelCase name}}/loadByPage", {
-    params: { page, sortBy: "createdAt", typeSort: "desc", ...params },
+    params: { page, sortBy: "created_at", typeSort: "desc", ...params },
   });
   const { {{camelCase name}}s, total } = data || {};
   const totalCount = Number(total ?? 0);

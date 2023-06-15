@@ -1,7 +1,7 @@
 export type {{pascalCase name}}Props = {
   _id: string;
   name: string;
-  createdAt: string;
+  created_at: string;
   value?: boolean;
   active?: boolean;
 };
@@ -20,8 +20,8 @@ class {{pascalCase name}} {
   get name(): string {
     return this.props.name;
   }
-  get createdAt(): string {
-    return this.props.createdAt;
+  get created_at(): string {
+    return this.props.created_at;
   }
   get active(): boolean | undefined {
     return this.props.active;
@@ -33,7 +33,7 @@ class {{pascalCase name}} {
       name: this.props.name,
       active: this.props.active,
       value: false,
-      createdAt: new Date(this.props.createdAt).toLocaleDateString("pt-BR", {
+      created_at: new Date(this.props.created_at).toLocaleDateString("pt-BR", {
         day: "2-digit",
         month: "2-digit",
         year: "numeric",

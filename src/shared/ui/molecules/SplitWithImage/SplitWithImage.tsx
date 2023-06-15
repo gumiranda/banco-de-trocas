@@ -15,21 +15,9 @@ import { Feature } from "shared/ui/atoms";
 
 export const SplitWithImage = () => {
   return (
-    <Container maxW={"5xl"} py={12}>
+    <Container maxW={"5xl"} py={6}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          <Text
-            textTransform={"uppercase"}
-            color={"blue.400"}
-            fontWeight={600}
-            fontSize={"sm"}
-            bg={useColorModeValue("blue.50", "blue.900")}
-            p={2}
-            alignSelf={"flex-start"}
-            rounded={"md"}
-          >
-            Confiança e rapidez
-          </Text>
           <Heading>Facilitando a compra e venda de imóveis</Heading>
           <Text color={"gray.400"} fontSize={"lg"}>
             Negociar seu imóvel não precisa ser complicado! O Banco de Trocas Imóveis cuida

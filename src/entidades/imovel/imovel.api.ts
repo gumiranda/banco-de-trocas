@@ -61,7 +61,7 @@ export const getImovelById = async (id: string, ctx: any): Promise<ImovelProps |
     if (!data) {
       return null;
     }
-    return imovelModel(data).format();
+    return imovelModel(data?.[0]).format();
   } catch (error) {
     return null;
   }

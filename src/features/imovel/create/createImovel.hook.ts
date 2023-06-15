@@ -8,14 +8,17 @@ import { useRouter } from "next/router";
 import { api } from "shared/api";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
+import { makeAddImovelController } from "slices/imovel/controllers";
 export const useCreateImovel = () => {
   const { showModal } = useUi();
   const router = useRouter();
   const [active, setActive] = useState(false);
   const createImovel = useMutation(async (imovel: CreateImovelFormData) => {
     try {
-      const { data } = await api.post("/imovel/add", {
-        ...imovel,
+      const { data, error } = await makeAddImovelController().handle({
+        body: {
+          ...imovel,
+        },
       });
       if (!data) {
         showModal({

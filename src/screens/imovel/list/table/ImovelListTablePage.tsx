@@ -34,7 +34,7 @@ export const ImovelListTablePage = ({ page = 0, data }: ImovelListTablePageProps
           fields={[
             { id: "name", label: "Nome", displayKeyText: true },
             {
-              id: "createdAt",
+              id: "created_at",
               label: "Data de criação",
               displayKeyText: false,
               children: <Text />,

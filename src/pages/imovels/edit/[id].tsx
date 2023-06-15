@@ -4,7 +4,7 @@ import { GetServerSideProps } from "next";
 import { withSSRAuth } from "shared/libs/utils";
 export const getServerSideProps: GetServerSideProps = withSSRAuth(async (context) => {
   const id = context?.query?.id;
-  if (!id || typeof id !== "string") {
+  if (!id || typeof id !== "string" || id === "manifest.json") {
     return {
       notFound: true,
     };

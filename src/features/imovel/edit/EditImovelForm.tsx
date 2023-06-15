@@ -22,12 +22,12 @@ export const EditImovelForm = ({ imovel }: EditImovelFormProps) => {
           { id: "id", label: "Id" },
           { id: "name", label: "Nome" },
           { id: "createdById", label: "Id do criador" },
-          { id: "createdAt", label: "Data de criação" },
+          { id: "created_at", label: "Data de criação" },
         ]}
       />
       <GridForm>
         <FormControl
-          label="Nome da imovel"
+          label="Nome do imovel"
           error={formState.errors.name}
           {...register("name")}
         />

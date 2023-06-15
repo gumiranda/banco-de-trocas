@@ -19,6 +19,7 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube, FaWhatsapp, FaFacebook } from "react-icons/fa";
+import { useUi } from "shared/libs";
 
 import {
   MdPhone,
@@ -28,16 +29,18 @@ import {
   MdOutlineEmail,
 } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
+import { makeAddContatoController } from "slices/contato/controllers";
 export const ContactForm = () => {
+  const { showModal } = useUi();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  console.log({ name });
   return (
-    <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+    <Container bg="gray.900" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
-          bg="#02054B"
+          bg="gray.600"
           color="white"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
@@ -48,7 +51,7 @@ export const ContactForm = () => {
               <WrapItem>
                 <Box>
                   <Heading>Contato</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.200">
                     Preencha o formulário e entre em contato com o corretor
                   </Text>
                   <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
@@ -59,8 +62,8 @@ export const ContactForm = () => {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                        _hover={{ border: "2px solid #333" }}
+                        leftIcon={<MdPhone color="#333" size="20px" />}
                       >
                         +55 (11) 991843119
                       </Button>
@@ -70,8 +73,8 @@ export const ContactForm = () => {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                        _hover={{ border: "2px solid #333" }}
+                        leftIcon={<MdEmail color="#333" size="20px" />}
                       >
                         giaguiar@uol.com.br
                       </Button>
@@ -81,8 +84,8 @@ export const ContactForm = () => {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                        _hover={{ border: "2px solid #333" }}
+                        leftIcon={<MdLocationOn color="#333" size="20px" />}
                       >
                         Ribeirão Preto, SP
                       </Button>
@@ -167,8 +170,24 @@ export const ContactForm = () => {
                       </FormControl>
                       <FormControl id="name" float="right">
                         <Button
-                          onClick={() => {
-                            console.log({ email, name, message });
+                          onClick={async () => {
+                            const { data, error } =
+                              await makeAddContatoController().handle({
+                                body: {
+                                  email,
+                                  nome: name,
+                                  message,
+                                },
+                              });
+                            if (data?.[0]) {
+                              showModal({
+                                content:
+                                  "Contato enviado, em breve nosso corretor credenciado entrará em contato!",
+                                title: "Sucesso",
+                                type: "success",
+                              });
+                            }
+                            console.log({ data, error });
                           }}
                           variant="solid"
                           bg="#0D74FF"

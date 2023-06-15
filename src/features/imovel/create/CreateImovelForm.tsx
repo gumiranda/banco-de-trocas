@@ -8,7 +8,7 @@ export const CreateImovelForm = () => {
   return (
     <BoxCreateItem
       onSubmit={handleSubmit(handleCreateImovel)}
-      title={"Criar imovel"}
+      title={"Cadastrar imóvel"}
       isLoadingSaveButton={formState.isSubmitting}
       cancelRoute={"/imovels/1"}
     >
