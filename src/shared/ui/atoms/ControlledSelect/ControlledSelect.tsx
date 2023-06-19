@@ -1,3 +1,5 @@
+//@ts-ignore
+
 import React from "react";
 import { useController, FieldValues, UseControllerProps } from "react-hook-form";
 import { FormErrorMessage, FormLabel, FormControl } from "@chakra-ui/react";
@@ -13,12 +15,7 @@ interface ControlledSelectProps<
   label?: string;
 }
 
-export const ControlledSelect = <
-  FormValues extends FieldValues = FieldValues,
-  Option = unknown,
-  IsMulti extends boolean = boolean,
-  Group extends GroupBase<Option> = GroupBase<Option>
->({
+export const ControlledSelect = ({
   name,
   label,
   options,
@@ -26,22 +23,21 @@ export const ControlledSelect = <
   rules,
   shouldUnregister,
   ...selectProps
-}: ControlledSelectProps<FormValues, Option, IsMulti, Group>) => {
+}: any) => {
   const {
     field,
     fieldState: { error },
-  } = useController<FormValues>({ name, control, rules, shouldUnregister });
+  } = useController({ name, control, rules, shouldUnregister });
   return (
-    // @ts-ignore
     <FormControl textColor={"gray.900"}>
       {label && (
         <FormLabel textColor="white" htmlFor={name}>
           {label}
         </FormLabel>
       )}
-      <Select<Option, IsMulti, Group>
-        {...selectProps}
-        {...field}
+      <Select
+        {...(selectProps as any)}
+        {...(field as any)}
         options={options}
         id={name}
         isInvalid={!!error}
