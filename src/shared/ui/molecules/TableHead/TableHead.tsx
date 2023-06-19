@@ -58,14 +58,14 @@ export const TableHead = ({
           <Button
             size="sm"
             fontSize="sm"
-            colorScheme={"gray"}
+            colorScheme={"black"}
             leftIcon={<Icon fontSize="20" as={RiFileListLine} />}
           >
             Lista
           </Button>
         </NextLink>
         <Tooltip label="Excluir todos os selecionados">
-          <Button onClick={deleteSelectedAction} size="sm" bg="gray.700">
+          <Button onClick={deleteSelectedAction} size="sm" bg="gray.900">
             <Icon fontSize="20" as={RiDeleteBin6Line} />
           </Button>
         </Tooltip>

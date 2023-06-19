@@ -25,6 +25,26 @@ export const useCreateImovel = () => {
   const handleChangeuf = (event: React.ChangeEvent<{ value: unknown }>) => {
     setuf(event.target.value as string);
   };
+  const [faixadepreco, setfaixadepreco] = useState("entre55000e100000");
+  const handleChangefaixadepreco = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setfaixadepreco(event.target.value as string);
+  };
+  const [valordevenda, setvalordevenda] = useState("entre55000e100000");
+  const handleChangevalordevenda = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setvalordevenda(event.target.value as string);
+  };
+  const [valordemercado, setvalordemercado] = useState("entre55000e100000");
+  const handleChangevalordemercado = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setvalordemercado(event.target.value as string);
+  };
+  const [numerobanheiros, setnumerobanheiros] = useState(1);
+  const handleChangenumerobanheiros = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setnumerobanheiros(event.target.value as number);
+  };
+  const [numeroquartos, setnumeroquartos] = useState(1);
+  const handleChangenumeroquartos = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setnumeroquartos(event.target.value as number);
+  };
   const createImovel = useMutation(async (imovel: CreateImovelFormData) => {
     try {
       const { data, error } = await makeAddImovelController().handle({
@@ -46,7 +66,7 @@ export const useCreateImovel = () => {
         title: "Sucesso",
         type: "success",
       });
-      router.push("/imovels/1");
+      router.push("/");
       return data;
     } catch (error) {
       showModal({
@@ -66,6 +86,11 @@ export const useCreateImovel = () => {
       interessadoem,
       tipodepropriedade,
       uf,
+      faixadepreco,
+      valordemercado,
+      valordevenda,
+      numeroquartos,
+      numerobanheiros,
     });
   };
   return {
@@ -82,5 +107,15 @@ export const useCreateImovel = () => {
     handleChangetipodepropriedade,
     uf,
     handleChangeuf,
+    faixadepreco,
+    handleChangefaixadepreco,
+    valordemercado,
+    handleChangevalordemercado,
+    valordevenda,
+    handleChangevalordevenda,
+    numeroquartos,
+    handleChangenumeroquartos,
+    numerobanheiros,
+    handleChangenumerobanheiros,
   };
 };

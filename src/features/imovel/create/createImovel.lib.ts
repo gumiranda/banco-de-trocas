@@ -23,8 +23,8 @@ export type CreateImovelFormData = {
   tipodepropriedade?: string | null;
   trocaobs?: string | null;
   uf?: string | null;
-  valordemercado?: number | null;
-  valordevenda?: number | null;
+  valordemercado?: string | null;
+  valordevenda?: string | null;
   active?: boolean;
 };
 
@@ -38,9 +38,6 @@ export const createImovelFormSchema = yup.object().shape({
   numerobanheiros: yup.number(),
   areatotal: yup.number(),
   areautil: yup.number(),
-  valordemercado: yup.number(),
-  valordevenda: yup.number(),
-  faixadepreco: yup.string(),
   documentacao: yup.string(),
   tipo: yup.string(),
   distanciamar: yup.number(),
@@ -48,7 +45,7 @@ export const createImovelFormSchema = yup.object().shape({
   obsimovel: yup.string(),
   infoadicional: yup.string(),
   telefone: yup.string().required("Telefone é obrigatório"),
-  email: yup.string().required("Email é obrigatório"),
+  email: yup.string().email("Email inválido").required("Email é obrigatório"),
   localizacao: yup.string(),
 });
 
@@ -63,9 +60,6 @@ export const useCreateImovelLib = () => {
       numerobanheiros: 0,
       areatotal: 0,
       areautil: 0,
-      valordemercado: 0,
-      valordevenda: 0,
-      faixadepreco: "",
       documentacao: "",
       tipo: "",
       distanciamar: 0,

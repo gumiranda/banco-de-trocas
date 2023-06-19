@@ -108,7 +108,7 @@ export class SupabaseRepository extends Repository {
     const { count, error } = await supabase
       .from(this.tableName)
       .select("count", { count: "exact" })
-      .match(query.fields)
+      .match(query?.fields ?? {})
       .single();
     return { data: count, error };
   }

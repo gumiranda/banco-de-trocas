@@ -24,7 +24,8 @@ export const getImovels = async (
     },
   });
   const { imovels, total } = data || {};
-  const totalCount = Number(total ?? 0);
+  console.log({ imovels, total });
+  const totalCount = Number(total?.data ?? 0);
   const lastPage = Number.isInteger(totalCount / registerByPage)
     ? totalCount / registerByPage
     : Math.floor(totalCount / registerByPage) + 1;
