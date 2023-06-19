@@ -13,12 +13,7 @@ export const Sobre = () => {
       direction={"column"}
     >
       <Box textAlign={"center"}>
-        <Avatar
-          size={8}
-          src={"https://iili.io/H6MlvRI.png"}
-          alt={"Gilson Aguiar"}
-          mb={2}
-        />
+        <Avatar size={"xl"} src={"https://iili.io/H6MlvRI.png"} mb={2} />
 
         <Text color={useColorModeValue("gray.800", "gray.800")} fontWeight={600}>
           Gilson Gonçalves de Aguiar
@@ -39,7 +34,7 @@ export const Sobre = () => {
         Paulo, Interior Paulista. Caso tenha interesse na compra ou venda de imóveis no
         Litoral vai falar com a pessoa certa. Utilizo o sistema de trocas com volta ou
         recebimento de valores facilitando e muito a transação imobiliária. Ligue agora
-        (11) 991843119. Deixe seu oi no zap e comece agora mesmo.
+        (11) 991843119. Deixe seu oi no zap e faça negócio agora mesmo.
       </Text>
       <Stack spacing={6} direction={"row"}>
         <NextLink href={WHATSAPP_URL}>
