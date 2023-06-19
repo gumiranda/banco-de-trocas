@@ -1,7 +1,6 @@
 import { ImovelProps } from "entidades/imovel";
 import { useCreateImovel } from "./createImovel.hook";
 import { BoxCreateItem, FormControl, Checkbox, GridForm, Select } from "shared/ui";
-import { type } from "../../../entidades/imovel/index";
 
 export const CreateImovelForm = () => {
   const {
