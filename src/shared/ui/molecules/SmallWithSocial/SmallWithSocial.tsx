@@ -10,6 +10,8 @@ import {
 import { FaInstagram, FaTwitter, FaYoutube, FaWhatsapp, FaFacebook } from "react-icons/fa";
 import { ReactNode } from "react";
 import { SocialButton } from "shared/ui/atoms";
+import { WHATSAPP_URL } from "shared/libs/utils/constants";
+
 export const SmallWithSocial = () => {
   return (
     <Box
@@ -33,10 +35,7 @@ export const SmallWithSocial = () => {
           <SocialButton label={"Facebook"} href={"https://www.facebook.com/imoveis5060"}>
             <FaFacebook />
           </SocialButton>
-          <SocialButton
-            label={"Whatsapp"}
-            href={"https://api.whatsapp.com/send?phone=5511991843119&text=Ola."}
-          >
+          <SocialButton label={"Whatsapp"} href={WHATSAPP_URL}>
             <FaWhatsapp />
           </SocialButton>
           <SocialButton label={"Instagram"} href={"https://www.facebook.com/imoveis5060"}>

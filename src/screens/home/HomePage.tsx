@@ -6,6 +6,7 @@ import {
   SplitWithImage,
   SmallWithSocial,
   ContactForm,
+  Sobre,
 } from "shared/ui";
 export const HomePage: NextPage = () => {
   return (
@@ -17,6 +18,7 @@ export const HomePage: NextPage = () => {
       <Flex minW="100%" justifyContent="center" flexDirection={"column"}>
         <CallToActionWithIllustration />
         <SplitWithImage />
+        <Sobre />
         <ContactForm />
         <SmallWithSocial />
       </Flex>

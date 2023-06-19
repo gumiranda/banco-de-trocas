@@ -5,6 +5,7 @@ import { RiMenuLine } from "react-icons/ri";
 import { useAuth, useSidebarDrawer } from "shared/libs";
 import { FaWhatsapp } from "react-icons/fa";
 import { SocialButton } from "shared/ui/atoms";
+import { WHATSAPP_URL } from "shared/libs/utils/constants";
 
 export const NavBar = () => {
   const { isAuthenticated } = useAuth();
@@ -26,10 +27,7 @@ export const NavBar = () => {
       <Logo />
       {isDesktopVersion && (
         <Flex align="center" ml="auto">
-          <SocialButton
-            label={"Whatsapp"}
-            href={"https://api.whatsapp.com/send?phone=5511991843119&text=Ola."}
-          >
+          <SocialButton label={"Whatsapp"} href={WHATSAPP_URL}>
             <FaWhatsapp />
           </SocialButton>
           <Profile showProfileData={isDesktopVersion} />

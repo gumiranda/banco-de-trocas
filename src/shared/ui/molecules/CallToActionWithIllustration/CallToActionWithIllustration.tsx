@@ -1,6 +1,7 @@
 import { Flex, Container, Heading, Stack, Text, Button } from "@chakra-ui/react";
 import { Illustration } from "shared/ui/atoms/Illustration";
 import NextLink, { LinkProps } from "next/link";
+import { WHATSAPP_URL } from "shared/libs/utils/constants";
 export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
   return (
     <Container maxW={"5xl"}>
@@ -31,7 +32,7 @@ export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
           Residências, Apartamentos, Sítios, Terrenos, Imóveis Rurais ou Comerciais.
         </Text>
         <Stack spacing={6} direction={"row"}>
-          <NextLink href="https://api.whatsapp.com/send?phone=5511991843119&text=Ola.">
+          <NextLink href={WHATSAPP_URL}>
             <Button
               rounded={"full"}
               px={6}
