@@ -13,6 +13,18 @@ export const useCreateImovel = () => {
   const { showModal } = useUi();
   const router = useRouter();
   const [aceitatroca, setAceitaTroca] = useState(false);
+  const [interessadoem, setInteressadoem] = useState("trocar");
+  const handleChangeInteressadoEm = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setInteressadoem(event.target.value as string);
+  };
+  const [tipodepropriedade, settipodepropriedade] = useState("casa");
+  const handleChangetipodepropriedade = (event: React.ChangeEvent<{ value: unknown }>) => {
+    settipodepropriedade(event.target.value as string);
+  };
+  const [uf, setuf] = useState("SP");
+  const handleChangeuf = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setuf(event.target.value as string);
+  };
   const createImovel = useMutation(async (imovel: CreateImovelFormData) => {
     try {
       const { data, error } = await makeAddImovelController().handle({
@@ -48,7 +60,13 @@ export const useCreateImovel = () => {
   const handleCreateImovel: SubmitCreateImovelHandler = async (
     values: CreateImovelFormData
   ) => {
-    await createImovel.mutateAsync({ ...values, aceitatroca });
+    await createImovel.mutateAsync({
+      ...values,
+      aceitatroca,
+      interessadoem,
+      tipodepropriedade,
+      uf,
+    });
   };
   return {
     formState,
@@ -57,5 +75,12 @@ export const useCreateImovel = () => {
     handleCreateImovel,
     aceitatroca,
     setAceitaTroca,
+    interessadoem,
+    setInteressadoem,
+    handleChangeInteressadoEm,
+    tipodepropriedade,
+    handleChangetipodepropriedade,
+    uf,
+    handleChangeuf,
   };
 };

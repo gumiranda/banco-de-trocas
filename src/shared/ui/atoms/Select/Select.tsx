@@ -14,7 +14,10 @@ export const Select = ({
       <SelectChakra bg="gray.700" {...rest} data-testid="SelectTestId">
         {list?.map?.((item, index) => (
           <option
-            style={{ backgroundColor: "#7159c1" }}
+            style={{
+              backgroundColor: "gray",
+              //  "#7159c1"
+            }}
             key={item?.[keyValue] ?? index}
             value={item?.[keyValue]}
           >

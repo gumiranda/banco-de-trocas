@@ -46,8 +46,8 @@ export const ContactForm = () => {
           m={{ sm: 4, md: 16, lg: 10 }}
           p={{ sm: 5, md: 5, lg: 16 }}
         >
-          <Box p={4}>
-            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+          <Box p={2}>
+            <Wrap spacing={{ base: 5, sm: 0, md: 0, lg: 20 }}>
               <WrapItem>
                 <Box>
                   <Heading>Contato</Heading>
@@ -91,42 +91,11 @@ export const ContactForm = () => {
                       </Button>
                     </VStack>
                   </Box>
-                  <HStack
-                    mt={{ lg: 10, md: 10 }}
-                    spacing={5}
-                    px={5}
-                    alignItems="flex-start"
-                  >
-                    <IconButton
-                      aria-label="facebook"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
-                      icon={<MdFacebook size="28px" />}
-                    />
-                    <IconButton
-                      aria-label="instagram"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
-                      icon={<FaInstagram size="28px" />}
-                    />
-                    <IconButton
-                      aria-label="whatsapp"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
-                      icon={<FaWhatsapp size="28px" />}
-                    />
-                  </HStack>
                 </Box>
               </WrapItem>
               <WrapItem>
                 <Box bg="white" borderRadius="lg">
-                  <Box m={8} color="#0B0E3F">
+                  <Box m={16} color="#0B0E3F">
                     <VStack spacing={5}>
                       <FormControl id="name">
                         <FormLabel>Seu nome</FormLabel>
@@ -171,6 +140,22 @@ export const ContactForm = () => {
                       <FormControl id="name" float="right">
                         <Button
                           onClick={async () => {
+                            if (
+                              !email ||
+                              !name ||
+                              !message ||
+                              !email.includes("@") ||
+                              !email.includes(".") ||
+                              name === "" ||
+                              message === "" ||
+                              email === ""
+                            ) {
+                              return showModal({
+                                content: "Preencha todos os campos",
+                                title: "Erro",
+                                type: "error",
+                              });
+                            }
                             const { data, error } =
                               await makeAddContatoController().handle({
                                 body: {
