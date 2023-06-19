@@ -28,13 +28,14 @@ export const Sobre = () => {
         textAlign={"center"}
         maxW={"3xl"}
       >
-        Meu nome é Gilson Gonçalves de Aguiar, atuo no ramo imobiliário desde 1981. Meu
-        objetivo é criar soluções para a realização de seu negócio imobiliário. Tenho amplo
-        conhecimento em imóveis, São Paulo Capital, Litoral Sul e Norte do Estado de São
-        Paulo, Interior Paulista. Caso tenha interesse na compra ou venda de imóveis no
-        Litoral vai falar com a pessoa certa. Utilizo o sistema de trocas com volta ou
-        recebimento de valores facilitando e muito a transação imobiliária. Ligue agora
-        (11) 991843119. Deixe seu oi no zap e faça negócio agora mesmo.
+        Meu nome é Gilson Gonçalves de Aguiar creci 36.924-f, atuo no ramo imobiliário
+        desde 1981. Meu objetivo é criar soluções para a realização de seu negócio
+        imobiliário. Tenho amplo conhecimento em imóveis, São Paulo Capital, Litoral Sul e
+        Norte do Estado de São Paulo, Interior Paulista. Caso tenha interesse na compra ou
+        venda de imóveis no Litoral vai falar com a pessoa certa. Utilizo o sistema de
+        trocas com volta ou recebimento de valores facilitando e muito a transação
+        imobiliária. Ligue agora (11) 991843119. Deixe seu oi no zap e faça negócio agora
+        mesmo.
       </Text>
       <Stack spacing={6} direction={"row"}>
         <NextLink href={WHATSAPP_URL}>
