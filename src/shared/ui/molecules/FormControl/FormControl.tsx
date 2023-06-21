@@ -23,6 +23,7 @@ const FormControlMolecules: ForwardRefRenderFunction<HTMLInputElement, InputProp
     bgColorHover = "gray.900",
     label,
     error = null,
+    multiple = false,
     ...rest
   },
   ref
@@ -39,6 +40,7 @@ const FormControlMolecules: ForwardRefRenderFunction<HTMLInputElement, InputProp
         _hover={{ bgColor: bgColorHover }}
         ref={ref}
         size={size}
+        multiple={multiple}
         {...rest}
       />
       {!!error && <FormErrorMessage>{error?.message}</FormErrorMessage>}

@@ -5,9 +5,9 @@ import {
   useCreateImovelLib,
 } from "./createImovel.lib";
 import { useRouter } from "next/router";
-import { api } from "shared/api";
+import { supabase } from "shared/api/supabase";
 import { useMutation } from "@tanstack/react-query";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { makeAddImovelController } from "slices/imovel/controllers";
 export const useCreateImovel = () => {
   const { showModal } = useUi();
@@ -80,18 +80,64 @@ export const useCreateImovel = () => {
   const handleCreateImovel: SubmitCreateImovelHandler = async (
     values: CreateImovelFormData
   ) => {
-    await createImovel.mutateAsync({
-      ...values,
-      aceitatroca,
-      interessadoem,
-      tipodepropriedade,
-      uf,
-      faixadepreco,
-      valordemercado,
-      valordevenda,
-      numeroquartos,
-      numerobanheiros,
-    });
+    try {
+      const files = await handleUploadPhoto({ bucketName: values?.email });
+      await createImovel.mutateAsync({
+        ...values,
+        aceitatroca,
+        interessadoem,
+        tipodepropriedade,
+        uf,
+        faixadepreco,
+        valordemercado,
+        valordevenda,
+        numeroquartos,
+        numerobanheiros,
+      });
+    } catch (error) {
+      showModal({
+        content: "Ocorreu um erro inesperado no servidor, tente novamente mais tarde",
+        title: "Erro no servidor",
+        type: "error",
+      });
+    }
+  };
+
+  const [selectedFiles, setSelectedFiles] = useState<any>([]);
+  const handleUploadPhoto = async ({ bucketName = "imoveis" }) => {
+    // eslint-disable-next-line prefer-const
+    let files = [];
+    const { data, error } = await supabase.storage.createBucket(bucketName);
+    if (error) {
+      throw error;
+    }
+    for (const file of selectedFiles) {
+      const { data, error } = await supabase.storage
+        .from(bucketName)
+        .upload(file?.name as any, file);
+      if (error) {
+        throw error;
+      }
+      if (data) {
+        const download = await supabase.storage.from(bucketName).download(data?.path);
+        files.push({ ...data, ...download?.data });
+      }
+    }
+    return files;
+  };
+  const fileInputRef = useRef<any>(null);
+  const handleFileChange = (event: any) => {
+    const files = event.target.files;
+    const fileList: any = Array.from(files).filter((file: any) =>
+      file.type.startsWith("image/")
+    );
+    setSelectedFiles(fileList);
+  };
+
+  const handleButtonClick = () => {
+    if (fileInputRef.current && fileInputRef.current.click) {
+      fileInputRef.current.click();
+    }
   };
   return {
     formState,
@@ -117,5 +163,10 @@ export const useCreateImovel = () => {
     handleChangenumeroquartos,
     numerobanheiros,
     handleChangenumerobanheiros,
+    selectedFiles,
+    setSelectedFiles,
+    fileInputRef,
+    handleFileChange,
+    handleButtonClick,
   };
 };

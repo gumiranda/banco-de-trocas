@@ -1,7 +1,8 @@
+import React, { useRef, useState } from "react";
 import { ImovelProps } from "entidades/imovel";
 import { useCreateImovel } from "./createImovel.hook";
-import { BoxCreateItem, FormControl, Checkbox, GridForm, Select } from "shared/ui";
-
+import { BoxCreateItem, FormControl, Checkbox, GridForm, Select, Button } from "shared/ui";
+import { useBreakpointValue } from "@chakra-ui/react";
 export const CreateImovelForm = () => {
   const {
     aceitatroca,
@@ -26,7 +27,13 @@ export const CreateImovelForm = () => {
     handleChangenumeroquartos,
     numerobanheiros,
     handleChangenumerobanheiros,
+    selectedFiles,
+    setSelectedFiles,
+    fileInputRef,
+    handleFileChange,
+    handleButtonClick,
   } = useCreateImovel();
+  const isDesktopVersion = useBreakpointValue({ base: false, lg: true });
 
   return (
     <BoxCreateItem
@@ -72,7 +79,7 @@ export const CreateImovelForm = () => {
           label="Tipo de imóvel"
           list={[
             { key: "casa", value: "Casa" },
-            { key: "casa", value: "Casa geminada" },
+            { key: "casageminada", value: "Casa geminada" },
             { key: "apartamento", value: "Apartamento" },
             { key: "apartamentocoberturaduplex", value: "Apartamento Cobertura Duplex" },
             { key: "apartamentoduplex", value: "Apartamento Duplex" },
@@ -333,9 +340,56 @@ export const CreateImovelForm = () => {
                 {...register("trocaobs")}
               />
             )}
+            <FormControl
+              style={{ display: "none" }}
+              label="Fotos do imóvel"
+              error={formState.errors.photos}
+              type="file"
+              accept="image/jpeg,
+              image/jpg,
+              image/png"
+              {...register("photos")}
+              multiple
+              onChange={handleFileChange}
+              ref={fileInputRef}
+            />
+            <Button alignSelf={"center"} colorScheme="green" onClick={handleButtonClick}>
+              Adicionar fotos do imóvel
+            </Button>
           </>
         )}
       </GridForm>
+      {selectedFiles.length > 0 && (
+        <div>
+          <h4>Imagens selecionadas:</h4>
+          <br />
+          <ul
+            style={{
+              display: "grid",
+              gridTemplateColumns: `repeat(${
+                isDesktopVersion ? 3 : "auto-fit"
+              }, minmax(250px, 1fr))`,
+              gap: "20px",
+            }}
+          >
+            {selectedFiles.map((file: any, index: number) => (
+              <li key={index} style={{ marginTop: 5 }}>
+                <span>{file.name}</span>
+                <img
+                  style={{
+                    height: 250,
+                    width: 250,
+                    objectFit: "cover",
+                    marginTop: 15,
+                  }}
+                  src={URL.createObjectURL(file)}
+                  alt={file.name}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </BoxCreateItem>
   );
 };

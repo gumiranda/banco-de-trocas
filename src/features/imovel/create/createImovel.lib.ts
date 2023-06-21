@@ -8,7 +8,7 @@ export type CreateImovelFormData = {
   areautil?: number | null;
   distanciamar?: number | null;
   documentacao?: string | null;
-  email?: string | null;
+  email: string;
   endereco?: string | null;
   faixadepreco?: string | null;
   infoadicional?: string | null;
@@ -26,6 +26,7 @@ export type CreateImovelFormData = {
   valordemercado?: string | null;
   valordevenda?: string | null;
   active?: boolean;
+  photos: any;
 };
 
 export type SubmitCreateImovelHandler = SubmitHandler<CreateImovelFormData>;
