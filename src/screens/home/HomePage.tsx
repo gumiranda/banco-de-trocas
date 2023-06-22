@@ -13,7 +13,8 @@ export const HomePage: NextPage = () => {
     <>
       <Head
         title="Banco de trocas | Anuncie já seu imóvel"
-        description="Em época de crise quando o dinheiro desaparece, para se vender um imóvel nem como uma boa prece. Banco de Trocas de Imóveis, desde 1992 realizando negócios imobiliários bons para ambas as partes, voltando ou recebendo dinheiro de volta. Cadastre seu imóvel São Paulo Capital, Litoral Paulista, Interior Paulista. Residências, Apartamentos, Sítios, Terrenos, Imóveis Rurais ou Comerciais. Corretor credenciado Gilson Gonçalves de Aguiar - creci 36.924 f   11- 99184-3119 zap"
+        description="Atuando no mercado imobiliário desde 1992. Estamos buscando constantemente o melhor negócio pra você, seja para comprar, vender ou trocar seu imóvel.
+        Cadastre seu imóvel São Paulo Capital, Litoral Paulista, Interior Paulista. Residências, Apartamentos, Sítios, Terrenos, Imóveis Rurais ou Comerciais."
       />
       <Flex minW="100%" justifyContent="center" flexDirection={"column"}>
         <CallToActionWithIllustration />

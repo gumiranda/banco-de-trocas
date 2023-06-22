@@ -79,13 +79,16 @@ export const CreateImovelForm = () => {
           label="Tipo de imóvel"
           list={[
             { key: "casa", value: "Casa" },
-            { key: "casageminada", value: "Casa geminada" },
             { key: "apartamento", value: "Apartamento" },
+            { key: "casalitoral", value: "Casa litoral" },
+            { key: "apartamentolitoral", value: "Apartamento litoral" },
             { key: "apartamentocoberturaduplex", value: "Apartamento Cobertura Duplex" },
             { key: "apartamentoduplex", value: "Apartamento Duplex" },
             { key: "terreno", value: "Terreno" },
+            { key: "sitio", value: "Sítio" },
             { key: "chacara", value: "Chácara" },
             { key: "fazenda", value: "Fazenda" },
+            { key: "imovelcomercial", value: "Imóvel comercial" },
             { key: "galpao", value: "Galpão" },
             { key: "sala", value: "Sala" },
             { key: "loja", value: "Loja" },
