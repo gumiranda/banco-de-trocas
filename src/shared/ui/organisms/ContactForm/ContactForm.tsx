@@ -87,7 +87,7 @@ export const ContactForm = () => {
                         _hover={{ border: "2px solid #bdc3c7" }}
                         leftIcon={<MdLocationOn color="#bdc3c7" size="20px" />}
                       >
-                        Ribeirão Preto, SP
+                        São Paulo, SP
                       </Button>
                     </VStack>
                   </Box>
