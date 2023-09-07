@@ -216,10 +216,7 @@ export const About = () => {
                 />
               </Box>
             </Box>
-            <BlogTags
-              tags={["Finanças", "Imóveis", "Oportunidade", "Superação"]}
-              marginTop={3}
-            />
+            <BlogTags tags={["Finanças", "Imóveis", "Superação"]} marginTop={3} />
             <Heading fontSize="xl" marginTop="2">
               <Text textDecoration="none" _hover={{ textDecoration: "none" }}>
                 Uma Lição de Superar Desafios: O Caso do Prédio em Campos do Jordão
