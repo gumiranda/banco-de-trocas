@@ -318,7 +318,7 @@ export const About = () => {
               contato. Desejo a todos um ótimo domingo, e vamos aproveitar o verão que está
               quase chegando para realizar nossos sonhos de comprar ou vender imóveis.`}
             </Text>
-            <BlogAuthor name="Gilson Aguiar" date={new Date()} />
+            <BlogAuthor name="Gilson Aguiar" date={new Date(2023, 6, 6)} />
           </Box>
         </WrapItem>
       </Wrap>
