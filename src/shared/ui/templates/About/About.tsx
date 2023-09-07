@@ -65,7 +65,7 @@ export const About = () => {
   return (
     <Container maxW={"7xl"} p="12">
       <Heading as="h1">
-        Compre ou Venda seu Apartamento em Guarujá, SP com Gilson Gonçalves de Aguiar!
+        Compre ou Venda seu Apartamento no Guarujá, SP com Gilson Gonçalves de Aguiar!
       </Heading>
       <Box
         marginTop={{ base: "1", sm: "5" }}
@@ -128,7 +128,7 @@ export const About = () => {
             color={useColorModeValue("gray.100", "gray.200")}
             fontSize="lg"
           >
-            Você está pensando em vender ou comprar um apartamento em Guarujá, SP? Não
+            Você está pensando em vender ou comprar um apartamento no Guarujá, SP? Não
             perca tempo! Ligue agora para (11) 99184-3119 e envie um oi com seu nome. Eu
             sou Gilson Gonçalves de Aguiar, corretor de imóveis credenciado pelo Creci
             36.924-F, e estou aqui para ajudar a tornar realidade o seu objetivo
@@ -307,7 +307,7 @@ export const About = () => {
               valiosa que aprendi ao longo da minha carreira: "O Caminho das Pedras".
               Sempre busquei soluções criativas para enfrentar desafios no mercado
               imobiliário, transformando em vendas o que muitos consideravam impossível.
-              Nesta semana, decidi voltar meu foco para a venda de imóveis em Guarujá, SP,
+              Nesta semana, decidi voltar meu foco para a venda de imóveis no Guarujá, SP,
               com ênfase em apartamentos nas praias de Pitangueiras, Enseada, Astúrias e
               Praia do Tombo. Se você está interessado em vender ou comprar apartamentos
               nessas quatro belas praias, o "Caminho das Pedras" é a estratégia da troca,
