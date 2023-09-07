@@ -28,8 +28,8 @@ export const CallToActionWithIllustration = ({ children, ...rest }: any) => {
           segurança e satisfação onde ambas as partes saem ganhando.
         </Text>
         <Text fontSize={"xl"} color={"gray.300"} maxW={"3xl"}>
-          Cadastre seu imóvel São Paulo Capital, Litoral Paulista, Interior Paulista.
-          Residências, Apartamentos, Sítios, Terrenos, Imóveis Rurais ou Comerciais.
+          Cadastre seu imóvel do Litoral Paulista. Residências, Apartamentos, Sítios,
+          Terrenos, Chácaras ou Comerciais.
         </Text>
         <Stack spacing={6} direction={"row"}>
           <NextLink href={WHATSAPP_URL}>
